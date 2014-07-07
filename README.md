@@ -1,2 +1,9 @@
 ggkJS
 =====
+利用canvas的绘图功能制作刮刮卡效果。
+##usage
+先定义好canvas，然后直接引用js文件即可。
+##update
+新增reRender方法。
+		reRender('二等奖');
+调用reRender方法后，刮刮卡会重新绘制并设置奖项。

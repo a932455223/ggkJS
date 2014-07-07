@@ -85,6 +85,17 @@ txtCtx.font = 'bold 26px 幼圆';
 txtCtx.textBaseline = 'middle';
 txtCtx.textAlign = 'center';
 txtCtx.fillText(val ,w/2,h/2);
+/****重新绘制刮刮卡*****/
+function reRender(str){
+  txtCtx.clearRect(0,0,w,h);
+  txtCtx.fillText(str,w/2,h/2);
+  canvas.style.background = 'url('+ text.toDataURL() +') no-repeat';
+  context.globalCompositeOperation='source-over';
+  context.fillStyle='gray';
+  context.fillRect(0,0,w,h);
+  context.globalCompositeOperation='destination-out';
+
+}
 /*******设置刮刮卡背景图片 end********/
 canvas.style.background = 'url('+ text.toDataURL() +') no-repeat';
 context.fillStyle = 'gray';
