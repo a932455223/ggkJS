@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="Cache-Control" content="no-transform "/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="keywords" content="抽奖">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="抽奖">
+    <script src="js/tts.js"></script>
+    <title>挂挂卡</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- 中奖弹出框 -->
+	<div class="wrap1 fadein" id="win_pop">
+		<div style="position: relative">
+			<div class="box1">
+				<div class="status">一等奖</div>
+				<img src="images/win_bj.jpg" alt="" style="width: 100%">
+				<a href="#"><div class="win_btn" id="close_pop">确定</div></a>
+			</div>
+			<div class="box_share">
+				<b>分享到:</b>
+				<ul>
+					<li><a href="#" class="sina"></a></li>
+					<li><a href="#" class="tengxun"></a></li>
+					<li><a href="#" class="douban"></a></li>
+					<li><a href="#" class="renren"></a></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 没中奖弹出框 -->
+	<div class="wrap2 fadein" id="lose_pop">
+		<div style="position: relative">
+			<div class="box2">
+				<img src="images/loser_bj2.png" alt="" style="width: 100%">
+				<a href="#"><div class="loser_btn" id="close_lose_pop">确定</div></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 机会用完了 -->
+	<div class="wrap3 fadein" id="chance_over">
+		<div style="position: relative">
+			<div class="box3">
+				<img src="images/chance_over.png" alt="" style="width: 65%">
+				<a href="#"><div class="chance_over_btn" id="close_chance_pop">确定</div></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册 -->
+	<div class="wrap4 fadein" id="register">
+		<div style="position: relative">
+			<div class="box4">
+				<div class="off_btn" id="close_register_pop">
+					<div class="off_btn_l"></div>
+				</div>
+				<div class="form">
+					<div class="import">
+						<div class="name">手&nbsp&nbsp&nbsp&nbsp机：</div>
+				 		<div class="cont"><input type="text"></div>
+				 	</div>
+				 	<div class="import">
+						<div class="name">验证码：</div>
+						<div class="code_btn">发送验证码</div>
+				 		<div class="cont2"><input type="text"></div>
+				 		<div class="clear"></div>
+				 	</div>
+				 	<a href="#"><div class="improt_btn">注册</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="head">
+		<div class="head_left">
+			<div class="users">尊敬的13812345678</div>
+			<a href="#" class="exit">退出</a>
+			<div class="clear"></div>
+		</div>
+		<a href="#" class="home"></a>
+	</div>
+	<div class="banner">
+		<img src="images/banner.jpg" alt="" style="width: 100%;">
+	</div>
+	<div class="content">
+		<div id="gglBox">
+      <span class='tip'>刮开下面的图层</span>
+      <br/>
+			<canvas width='130' height='50' class="surface" id="myCanvas"></canvas>	
+		</div>
+		<div class="prize">
+			<div class="icon">奖项设置</div>
+			<ul>
+				<li>一等奖：iphone6四台</li>
+				<li>二等奖：iphone6三台</li>
+				<li>三等奖：iphone6二台</li>
+				<li>四等奖：iphone6一台</li>
+			</ul>
+		</div>
+		<div class="share">
+			<b>分享到：</b>
+			<ul>
+				<li><a href="#" class="sina"></a></li>
+				<li><a href="#" class="tengxun"></a></li>
+				<li><a href="#" class="douban"></a></li>
+				<li><a href="#" class="renren"></a></li>
+				<div class="clear"></div>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>活动说明</p>
+		<p>活动时间：2014年6月24日—2015年1月24日</p>
+		<p>奖品将在7个工作日内送出</p>
+	</div>
+</body>
+<script src="js/common.js"></script>
+<script type="text/javascript" src="js/ggk.js"></script>
+</html>
