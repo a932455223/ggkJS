@@ -19,7 +19,7 @@ function eventDown(e){
   e.preventDefault();
   mousedown = true;
 }
-
+//获取绘制百分比		
 function getPercent(){
   var img = context.getImageData(0,0,w,h).data;
   var len = img.length,k = 0;
@@ -38,7 +38,9 @@ function eventUp(e){
   var p = getPercent();
   if(parseFloat(p) > 50){
 	var win = $("#win_grand").attr("data-win-flag");
-	
+	// context.globalCompositionOperation = "source-over";
+	//清空涂层
+	clearCoat();
 	if(win == "true"){
 		var award_grand = win_grand.attr("data-award-grand");
 		var award_name = win_grand.attr("data-award-name");
@@ -47,6 +49,7 @@ function eventUp(e){
 		$('#show_award').html(award_grand + " : " + award_name);
     	$('#win_pop').show();
 	}else {
+		// alert("ok");
 		$('#lose_pop').show();
 	}
   }
@@ -64,10 +67,12 @@ function eventMove(e){
     context.beginPath();
     context.arc(x, y, 15, 0, Math.PI * 2);
     context.fill();
+    // clearCoat();
   }else{
     console.log('move');
   }
 }
+
 
 var flag = win_grand.attr("data-win-flag");
 var val = win_grand.attr("data-award-name");
@@ -76,7 +81,7 @@ if(flag == 'true'){
 }
 
 var txt = 'Smallyoko'; 
-/******设置刮刮卡背景图片********/
+//设置刮刮卡背景图片
 var text = document.createElement('canvas');
 text.width = w;
 text.height = h;
@@ -85,7 +90,7 @@ txtCtx.font = 'bold 26px 幼圆';
 txtCtx.textBaseline = 'middle';
 txtCtx.textAlign = 'center';
 txtCtx.fillText(val ,w/2,h/2);
-/****重新绘制刮刮卡*****/
+//重新绘制刮刮卡
 function reRender(str){
   txtCtx.clearRect(0,0,w,h);
   txtCtx.fillText(str,w/2,h/2);
@@ -96,7 +101,7 @@ function reRender(str){
   context.globalCompositeOperation='destination-out';
 
 }
-/*******设置刮刮卡背景图片 end********/
+//设置刮刮卡背景图片
 canvas.style.background = 'url('+ text.toDataURL() +') no-repeat';
 context.fillStyle = 'gray';
 context.fillRect(0,0,w,h);
@@ -108,3 +113,9 @@ box.addEventListener('touchmove',eventMove);
 box.addEventListener('mousemove',eventMove);
 box.addEventListener('touchend',eventUp);
 box.addEventListener('mouseup',eventUp);
+//清空涂层
+function clearCoat(){
+	context.beginPath();
+	context.fillStyle = "red";
+	context.fillRect(0,0,w,h);
+}
