@@ -57,7 +57,7 @@ function eventUp(e){
   var p = getPercent();
   if(parseFloat(p) > options.areaPercent){
     if(typeof options.complete == 'function'){
-      options.complete();
+      options.complete(getPercent);
     }
   }
 }

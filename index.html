@@ -130,7 +130,8 @@
 	var ggk = new createGGK({
 		text:'您已经中二等奖',
 		backFont:'bold 16px 幼圆',
-		complete:function(){
+		complete:function(f){
+			console.log(f());
     var win = $("#win_grand").attr("data-win-flag");
     if(win == "true"){
       // var award_grand = win_grand.attr("data-award-grand");
