@@ -8,6 +8,7 @@ var options = {};
 var default_option={
   container:'gglBox',
   text:'thanks',
+  backFont:'bold 26px 幼圆',
   areaPercent:50,
   frontPosition:{
     x:function(_w,_h){
@@ -18,6 +19,7 @@ var default_option={
     }
 },
   frontText:'刮开下面的图层'
+
 };
 
 
@@ -85,13 +87,18 @@ function extend(target,source){
   return target;
 }
 
+function clear(){
+  context.globalCompositeOperation='destination-out';
+  context.fillRect(0,0,w,h);
+}
+
 /****重新绘制刮刮卡*****/
 function renderText(str){
   var text = document.createElement('canvas');
   text.width = w;
   text.height = h;
   var txtCtx = text.getContext('2d');
-  txtCtx.font = 'bold 26px 幼圆';
+  txtCtx.font = options.backFont;
   txtCtx.textBaseline = 'middle';
   txtCtx.textAlign = 'center';
   txtCtx.fillText(str,w/2,h/2);
@@ -119,7 +126,7 @@ function createGGK(option){
   box.addEventListener('mousemove',eventMove);
   box.addEventListener('touchend',eventUp);
   box.addEventListener('mouseup',eventUp);
-  return {reRender:renderText};
+  return {reRender:renderText,clear:clear};
 }
 
 window.createGGK = createGGK;

@@ -128,6 +128,8 @@
 <script type="text/javascript" src="js/ggk-1.1.js"></script>
 <script type="text/javascript">
 	var ggk = new createGGK({
+		text:'您已经中二等奖',
+		backFont:'bold 16px 幼圆',
 		complete:function(){
     var win = $("#win_grand").attr("data-win-flag");
     if(win == "true"){
@@ -142,6 +144,7 @@
   }
 	});
 	
-	//ggk.reRender('abc');
+	//var ggk=new createGGK({text:'您已经中二等奖'});
+	//ggk.clear();
 </script>
 </html>
