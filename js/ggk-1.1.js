@@ -126,7 +126,7 @@ function createGGK(option){
   box.addEventListener('mousemove',eventMove);
   box.addEventListener('touchend',eventUp);
   box.addEventListener('mouseup',eventUp);
-  return {reRender:renderText,clear:clear,getPercent:getPercent};
+  return {reRender:renderText,clear:clear};
 }
 
 window.createGGK = createGGK;
