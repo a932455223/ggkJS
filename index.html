@@ -125,5 +125,23 @@
 	</div>
 </body>
 <script src="js/common.js"></script>
-<script type="text/javascript" src="js/ggk.js"></script>
+<script type="text/javascript" src="js/ggk-1.1.js"></script>
+<script type="text/javascript">
+	var ggk = new createGGK({
+		complete:function(){
+    var win = $("#win_grand").attr("data-win-flag");
+    if(win == "true"){
+      // var award_grand = win_grand.attr("data-award-grand");
+      // var award_name = win_grand.attr("data-award-name");
+      // $('#show_award').attr("data-award-grand", award_grand);
+      // $('#show_award').html(award_grand + " : " + award_name);
+      // $('#win_pop').show();
+    }else {
+      // $('#lose_pop').show();
+    }
+  }
+	});
+	
+	//ggk.reRender('abc');
+</script>
 </html>

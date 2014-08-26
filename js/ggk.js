@@ -14,7 +14,6 @@ function offsetLeft(elem){
 function offsetTop(elem){
   return elem.offsetParent ? elem.offsetTop + offsetTop(elem.offsetParent) : elem.offsetTop;
 }
-console.log(offsetLeft(canvas));
 function eventDown(e){
   e.preventDefault();
   mousedown = true;
@@ -34,7 +33,6 @@ function getPercent(){
 function eventUp(e){
   e.preventDefault();
   mousedown = false;
-  console.log('up');
   var p = getPercent();
   if(parseFloat(p) > 50){
 	var win = $("#win_grand").attr("data-win-flag");
