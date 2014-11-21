@@ -1,24 +1,24 @@
 ;(function(){
 var mousedown = false;
 var mouseup = false;
-var canvas = document.getElementById('myCanvas'); 
-var context = canvas.getContext('2d'); 
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
 var box,w,h;
 var options = {};
 var default_option={
   container:'gglBox',
   text:'thanks',
   backFont:'bold 26px 幼圆',
-  areaPercent:50,
+  areaPercent:30,
   frontPosition:{
     x:function(_w,_h){
-    return 2;
+    return 42;
   },
     y:function(_w,_h){
       return (_h/2)+4;
     }
 },
-  frontText:'刮开下面的图层'
+  frontText:'刮一刮，中大奖！'
 
 };
 
@@ -55,6 +55,7 @@ function eventUp(e){
   e.preventDefault();
   mousedown = false;
   var p = getPercent();
+
   if(parseFloat(p) > options.areaPercent){
     if(typeof options.complete == 'function'){
       options.complete(getPercent);
@@ -72,6 +73,9 @@ function eventMove(e){
     var y = (e.clientY +　document.body.scrollTop || e.pageY) - offsetTop(canvas) || 0;
     context.beginPath();
     context.arc(x, y, 15, 0, Math.PI * 2);
+    canvas.style.display='none';
+    canvas.offsetHeight;
+    canvas.style.display = 'inherit';
     context.fill();
   }else{
     console.log('move');
